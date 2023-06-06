@@ -96,6 +96,8 @@ const Login = () => {
       }
     } catch (error) {
       closeOvary();
+    }finally{
+      closeOvary();
     }
   };
   const { loggedIn, pending } = useTypedSelector((state) => state.auth);

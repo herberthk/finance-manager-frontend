@@ -69,11 +69,15 @@ const Confirm = () => {
           type: actionTypes.CONFIRM,
         });
         M.toast({ html: info, classes: 'rounded green' });
+        closeOvary();
       }
     } catch (error) {
       closeOvary();
+    }finally{
+      closeOvary();
     }
   };
+  
   useLayoutEffect(() => {
     M.AutoInit();
     document.body.classList.add('login_bg');
@@ -82,9 +86,7 @@ const Confirm = () => {
       document.body.classList.remove('login_bg');
     };
   }, []);
-  useEffect(() => {
-    sendCode();
-  }, []);
+  
   const sendCode = async () => {
     if (!email) {
       return;
@@ -108,6 +110,14 @@ const Confirm = () => {
       closeOvary();
     }
   };
+
+  useEffect(() => {
+    
+    sendCode()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+ 
   if (!pending || invalid) {
     return <Redirect to="/login" />;
   } else if (loggedIn) {
