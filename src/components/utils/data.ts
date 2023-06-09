@@ -82,7 +82,7 @@ export const useData = () => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [1500000,2000000, 3500000, salesBal, 400000, 700000, 0, 0, 0, 0, 0, 0],
+        data: [1500000,2000000, 3500000, 400000, 700000,salesBal, 0, 0, 0, 0, 0, 0],
       },
     ],
   };
